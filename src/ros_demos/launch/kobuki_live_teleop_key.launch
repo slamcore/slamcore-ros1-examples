@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Teleoperate the kobuki using the keyboard in a live run
+
+    By default this will turn on the kinematics, unless you explicitly specify `kinematics:=false`
+  -->
+  <arg name="kinematics" default="true"/>
+  <arg name="robot_type" value="kobuki"/>
+
+  <!-- Kinematics -->
+  <group if="$(arg kinematics)">
+    <include file="$(dirname)/$(arg robot_type)/setup_live.launch"/>
+  </group>
+
+  <!-- Teleoperation -->
+  <include file="$(find kobuki_keyop)/launch/keyop.launch"/>
+</launch>
+

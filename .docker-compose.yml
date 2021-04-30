@@ -1,0 +1,27 @@
+version: '3.0'
+services:
+  platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - UID=1000
+        - GID=1000
+        - USERNAME=berger
+        # docker-compose uses a user-defined network - overrides potential
+        # /etc/resolv.conf changes in the Dockerfile
+        # Use the IP instead of the DNS name
+        - BUILDBOT_ADDR=10.1.12.4
+    volumes:
+      - /home/berger/slamcore/ros_demos_ws:/home/berger/ros_ws
+      - /home/berger/slamcore/slamcore_packager/tools:/tools:ro
+      - /home/berger/.ccache:/home/berger/.ccache
+      - /home/berger/slamcore/ros_demos_ws/ubuntu18.04-amd64//deps:/deps
+      - /home/berger/slamcore/ros_demos_ws/ubuntu18.04-amd64//out:/out
+      - ~/.ssh/:/home/berger/.ssh/
+    stdin_open: true
+    tty: true
+    privileged: true
+    entrypoint: /bin/bash
+
+# vim: filetype=

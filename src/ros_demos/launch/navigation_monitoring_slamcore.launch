@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!--
+  Launch monitoring and visualisation tools for navigation runs
+-->
+<launch>
+
+<!-- Arguments -->
+<arg name="output" default="screen" />
+<arg name="node_prefix" default="" />
+<arg name="rviz_file" default="$(find ros_demos)/rviz/slamcore_nav.rviz" />
+<arg name="splash_screen" value="$(find slamcore_viz)/images/slamcore_logo_black_v2_300dpi.png" />
+<arg name="perspective_file" value="$(find ros_demos)/rqt/slamcore_nav.perspective"/>
+
+<!-- Nodes -->
+<node pkg="rviz" type="rviz" name="slam_visualiser"
+    args="-d $(arg rviz_file) -s $(arg splash_screen)"
+    output="$(arg output)"
+    required="true"/>
+
+<node pkg="rqt_gui" type="rqt_gui" name="rqt"
+  args="--perspective-file=$(arg perspective_file)"
+  output="$(arg output)"
+  required="true"/>
+</launch>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="slamcore_kobuki"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="camera_tf_root" default=""/>
+  <xacro:arg name="camera_link_frame_xyz" default=""/>
+  <xacro:arg name="camera_link_frame_rpy" default=""/>
+
+  <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
+  <xacro:include filename="$(find ros_demos)/descriptions/_d435.urdf.xacro" />
+
+  <xacro:kobuki/>
+  <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="base_link">
+    <origin xyz="$(arg camera_link_frame_xyz)" rpy="$(arg camera_link_frame_rpy)"/>
+  </xacro:sensor_d435>
+</robot>

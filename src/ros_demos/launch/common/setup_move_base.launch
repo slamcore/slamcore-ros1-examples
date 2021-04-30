@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Constants -->
+  <arg name="empty_file" value="$(find ros_demos)/config/common/empty.yaml"/>
+
+  <!-- Mandatory Arguments -->
+  <arg name="map_topic" />
+  <arg name="odom_topic" />
+  <arg name="cmd_vel_topic" />
+  <arg name="robot_type" doc="Robot for which we are using move_base."/>
+
+  <!-- move_base configuration with defaults
+
+    Override if this configuration doesn't suit your robot.
+    Set to `empty_file` to disable loading the corresponding YAML file.
+
+    For the robot at hand, move_base will load the configuration of each component
+    (e.g., global planner) from
+    $(find ros_demos)/config/$(arg robot_type)/<component-yaml-file>
+  -->
+  <arg name="move_base_params" default="$(find ros_demos)/config/common/move_base.yaml"/>
+  <arg name="global_planner" default="global_planner/GlobalPlanner"/>
+  <arg name="local_planner" default="teb_local_planner/TebLocalPlannerROS"/>
+  <arg name="global_planner_params" default="$(find ros_demos)/config/$(arg robot_type)/global_planner.yaml"/>
+  <arg name="local_planner_params" default="$(find ros_demos)/config/$(arg robot_type)/local_planner.yaml"/>
+  <arg name="global_costmap_params" default="$(find ros_demos)/config/$(arg robot_type)/global_costmap.yaml"/>
+  <arg name="local_costmap_params" default="$(find ros_demos)/config/$(arg robot_type)/local_costmap.yaml"/>
+  <arg name="common_costmap_params" default="$(find ros_demos)/config/$(arg robot_type)/common_costmap.yaml"/>
+  <arg name="obstacle_avoidance_params" default="$(arg empty_file)"/>
+
+  <!-- Launch move_base -->
+  <node pkg="move_base" type="move_base" name="move_base" respawn="true" output="screen">
+    <rosparam file="$(arg move_base_params)" command="load" />
+
+    <!-- Planners -->
+    <param name="base_global_planner" value="$(arg global_planner)" />
+    <param name="base_local_planner" value="$(arg local_planner)" />
+    <rosparam file="$(arg global_planner_params)" command="load" />
+    <rosparam file="$(arg local_planner_params)" command="load" />
+
+    <!-- Costmaps -->
+    <rosparam file="$(arg common_costmap_params)" command="load" ns="global_costmap" />
+    <rosparam file="$(arg common_costmap_params)" command="load" ns="local_costmap" />
+    <rosparam file="$(arg local_costmap_params)" command="load" />
+    <rosparam file="$(arg global_costmap_params)" command="load" />
+    <rosparam file="$(arg obstacle_avoidance_params)" command="load" ns="global_costmap" />
+    <rosparam file="$(arg obstacle_avoidance_params)" command="load" ns="local_costmap" />
+
+    <remap from="map" to="$(arg map_topic)" />
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+  </node>
+
+</launch>

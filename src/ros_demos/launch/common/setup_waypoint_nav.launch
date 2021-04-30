@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <!--
+    Helper script for enabling waypoint navigation with move_base.
+    Sets up reasonable defaults for our usecases that the calling scripts can
+    change
+  -->
+
+  <arg name="output"/>
+  <arg name="map_frame"/>
+  <arg name="waypoint_nav_topic" default="/initialpose"/>
+  <arg name="waypoint_nav_use_poses" default="true"/>
+  <arg name="patrol_mode" default="true"/>
+
+  <include file="$(find follow_waypoints)/launch/follow_waypoints.launch">
+    <arg name="output" value="$(arg output)"/>
+    <arg name="goal_frame_id" value="$(arg map_frame)"/>
+    <arg name="wait_duration" value="0.0"/>
+    <arg name="waypoint_distance_tolerance" value="0.0"/>
+    <arg name="waypoints_to_follow_topic" value="$(arg waypoint_nav_topic)"/>
+    <arg name="waypoints_list_topic" value="/waypoints"/>
+    <arg name="waypoints_are_poses" value="$(arg waypoint_nav_use_poses)"/>
+    <arg name="patrol_mode" value="$(arg patrol_mode)"/>
+  </include>
+</launch>

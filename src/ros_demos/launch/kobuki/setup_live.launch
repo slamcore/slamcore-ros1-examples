@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- See kobuki_node/minimal.launch -->
+  <arg name="publish_tf" default="false"/>
+  <arg name="device_port" default="/dev/ttyUSB0"/>
+  <arg name="limit_acceleration" default="true"/>
+  <arg name="output" default="screen"/>
+
+  <!-- Motors/Odometry -->
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"
+    output="$(arg output)"/>
+  <node pkg="nodelet" type="nodelet" name="mobile_base" args="load kobuki_node/KobukiNodelet mobile_base_nodelet_manager"
+    output="$(arg output)">
+    <rosparam file="$(find kobuki_node)/param/base.yaml" command="load"/>
+    <param name="publish_tf" value="$(arg publish_tf)"/>
+    <param name="device_port" value="$(arg device_port)"/>
+    <param name="acceleration_limiter" value="$(arg limit_acceleration)"/>
+    <remap from="mobile_base/odom" to="odom"/>
+    <remap from="mobile_base/joint_states" to="joint_states"/>
+  </node>
+
+  <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" >
+    <rosparam command="load" file="$(find kobuki_node)/param/diagnostics.yaml" />
+  </node>
+</launch>
+

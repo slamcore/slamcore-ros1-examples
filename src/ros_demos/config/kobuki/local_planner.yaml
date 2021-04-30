@@ -1,0 +1,34 @@
+# Parameters description: http://wiki.ros.org/teb_local_planner
+TebLocalPlannerROS:
+  max_vel_x: 0.26
+  max_vel_y: 0.0
+  max_vel_theta: 0.9
+  max_vel_x_backwards: 0.1
+
+  transform_tolerance: 2.0
+
+  acc_lim_x: 1.0
+  acc_lim_y: 0.0
+  acc_lim_theta: 2.0
+
+  # Goal Tolerance Parametes
+  xy_goal_tolerance: 0.15
+  yaw_goal_tolerance: 0.17
+  free_goal_vel: false
+
+  # Robot Footprint - used for optimisation, not obstacle avoidance - for the latter it still uses the costmap footprint
+  footprint_model:
+    type: circular
+    radius: 0.18
+
+  global_plan_viapoint_sep: 0.3
+  weight_viapoint: 1000.0
+  global_plan_overwrite_orientation: true
+  publish_feedback: true # Enable for debugging
+  include_dynamic_obstacles: true
+  min_obstacle_dist: 0.01
+  costmap_obstacles_behind_robot_dist: 1.5 # TODO Change this?
+  weight_kinematics_forward_drive: 100
+
+  odom_topic: "odom"
+  map_frame: "map"

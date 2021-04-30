@@ -1,0 +1,616 @@
+{
+  "keys": {},
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr",
+          "repr": "{u'rqt_service_caller/ServiceCaller': [1], u'rqt_reconfigure/Param': [1], u'rqt_topic/TopicPlugin': [1], u'rqt_graph/RosGraph': [1], u'rqt_tf_tree/RosTfTree': [1]}"
+        }
+      },
+      "groups": {
+        "plugin__rqt_runtime_monitor__RuntimeMonitor__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RuntimeMonitorWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Runtime Monitor'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (2)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/slamcore/image1_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/slamcore/image1'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "expanded_nodes": {
+                  "type": "repr",
+                  "repr": "[u'/move_base', u'/move_base/local_costmap', u'/slamcore']"
+                },
+                "splitter": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000100000002000000c60000006c01ffffffff010000000100')",
+                  "pretty-print": "         l     "
+                },
+                "selected_nodes": {
+                  "type": "repr",
+                  "repr": "[u'/move_base', u'/move_base/local_costmap/inflation_layer']"
+                },
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000001000000020000012c000000640100000009010000000200')",
+                  "pretty-print": "       , d     "
+                },
+                "text": {
+                  "type": "repr",
+                  "repr": "u''"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/slamcore/image0_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/slamcore/image0'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Position'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "plot_type": {
+                  "type": "repr",
+                  "repr": "1"
+                },
+                "topics": {
+                  "type": "repr",
+                  "repr": "[u'/slamcore/pose/pose/position/z', u'/slamcore/pose/pose/position/x', u'/slamcore/pose/pose/position/y']"
+                },
+                "y_limits": {
+                  "type": "repr",
+                  "repr": "[-0.02149066225043846, 0.021804372579030395]"
+                },
+                "x_limits": {
+                  "type": "repr",
+                  "repr": "[-1543598782.3177297, -1543598782.1356673]"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Tracking Status'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "plot_type": {
+                  "type": "repr",
+                  "repr": "1"
+                },
+                "topics": {
+                  "type": "repr",
+                  "repr": "u'/slamcore/metadata/TrackingStatus/data'"
+                },
+                "y_limits": {
+                  "type": "repr",
+                  "repr": "[-1.0, 5.0]"
+                },
+                "x_limits": {
+                  "type": "repr",
+                  "repr": "[92.78748893737793, 93.78748893737793]"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {},
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Features'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "plot_type": {
+                  "type": "repr",
+                  "repr": "1"
+                },
+                "topics": {
+                  "type": "repr",
+                  "repr": "[u'/slamcore/metadata/NumFeatures/data', u'/slamcore/metadata/TrackedFeatures/data']"
+                },
+                "y_limits": {
+                  "type": "repr",
+                  "repr": "[0.0, 200.0]"
+                },
+                "x_limits": {
+                  "type": "repr",
+                  "repr": "[92.91905188560486, 93.91905188560486]"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_graph__RosGraph__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RosGraphUi": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Node Graph'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "graph_type_combo_box_index": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "hide_tf_nodes_check_box_state": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "filter_line_edit_text": {
+                  "type": "repr",
+                  "repr": "u'/'"
+                },
+                "highlight_connections_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "group_image_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "unreachable_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "actionlib_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "topic_filter_line_edit_text": {
+                  "type": "repr",
+                  "repr": "u'/'"
+                },
+                "group_tf_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "quiet_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "dead_sinks_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "leaf_topics_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "namespace_cluster_spin_box_value": {
+                  "type": "repr",
+                  "repr": "2"
+                },
+                "hide_dynamic_reconfigure_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "auto_fit_graph_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Message Publisher'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr",
+                  "repr": "u'[]'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_topic__TopicPlugin__1": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "tree_widget_header_state": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000000000001000000000000000001000000000000000000000000000000000000060900000005010100010000000000000000050000009cffffffff0000008100000003000000050000030e0000000100000003000001bd0000000100000003000000990000000100000003000000410000000100000003000000640000000100000003000003e80000000064')",
+                  "pretty-print": "                                                          A     d        "
+                }
+              },
+              "groups": {}
+            },
+            "dock_widget__TopicWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Topic Monitor'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_tf_tree__RosTfTree__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RosTfTreeUi": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'TF Tree'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "highlight_connections_check_box_state": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "auto_fit_graph_check_box_state": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_service_caller__ServiceCaller__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ServiceCallerWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Service Caller'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "splitter_orientation": {
+                  "type": "repr",
+                  "repr": "2"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_pose_view__PoseView__1": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "view_matrix": {
+                  "type": "repr",
+                  "repr": "u'[[0.020357178524136543, 0.8210704326629639, 0.570461094379425, 0.0], [0.9141205549240112, 0.21580655872821808, -0.34323298931121826, 0.0], [-0.4049282371997833, 0.5284578204154968, -0.7461646199226379, 0.0], [-9.480863809585571e-07, -3.000000476837158, -107.5, 1.0]]'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        }
+      }
+    },
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb000200000000000000000075000009ff0000057e0000000000000075000009ff0000057e00000000000000000a00')",
+          "pretty-print": "       u   ~   u   ~     "
+        },
+        "state": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd000000010000000300000a00000004d2fc0100000006fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000000000003bd0000000000000000fc00000000000005240000039900fffffffc0200000002fc0000001c000004d2000001a301000028fa000000000100000002fb00000072007200710074005f0073006500720076006900630065005f00630061006c006c00650072005f005f005300650072007600690063006500430061006c006c00650072005f005f0031005f005f005300650072007600690063006500430061006c006c006500720057006900640067006500740100000000ffffffff0000039900fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f0077006900640067006500740100000000000004120000014500fffffffc00000202000001a00000000000fffffffc0100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0031005f005f0049006d00610067006500560069006500770057006900640067006500740100000000000004790000000000000000fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0032005f005f0049006d00610067006500560069006500770057006900640067006500740100000241000002380000000000000000fb00000050007200710074005f0070006f00730065005f0076006900650077005f005f0050006f007300650056006900650077005f005f0031005f005f0047004c005600690065007700570069006400670065007401000004ac000000be0000000000000000fc0000052d000004d30000036000fffffffc0200000002fc0000001c000003320000014200fffffffc0100000002fc0000052d000004d30000036000fffffffa000000000100000003fb00000044007200710074005f00670072006100700068005f005f0052006f007300470072006100700068005f005f0031005f005f0052006f007300470072006100700068005500690100000000ffffffff0000036000fffffffb0000004c007200710074005f00740066005f0074007200650065005f005f0052006f0073005400660054007200650065005f005f0031005f005f0052006f0073005400660054007200650065005500690100000000ffffffff0000024800fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000213000003f30000000000000000fc0000060e000001720000000000fffffffa000000000200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000000000000000fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000000100000025c0000000000000000fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f007000690063005700690064006700650074010000035700000197000000a000fffffffb0000007c006e006f00640065005f006d0061006e0061006700650072005f0066006b00690065005f005f0046004b004900450020004e006f006400650020004d0061006e0061006700650072005f005f0031005f005f004e006f00640065004d0061006e00610067006500720046004b004900450050006c007500670069006e01000004430000033d0000000000000000fb00000078007200710074005f00720075006e00740069006d0065005f006d006f006e00690074006f0072005f005f00520075006e00740069006d0065004d006f006e00690074006f0072005f005f0031005f005f00520075006e00740069006d0065004d006f006e00690074006f007200570069006400670065007401000006220000015e000000000000000000000a000000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "pretty-print": "                 Xrqt_publisher__Publisher__1__PublisherWidget            $                      rrqt_service_caller__ServiceCaller__1__ServiceCallerWidget          lrqt_reconfigure__Param__1___plugincontainer_top_widget                                                                       y                                                     A 8                                                                      2 B                    Drqt_graph__RosGraph__1__RosGraphUi          Lrqt_tf_tree__RosTfTree__1__RosTfTreeUi          Brqt_plot__Plot__1__DataPlotWidget            r                                                                                            \\                                              W                                                                        C =                                                                    \" ^                                                            "
+        }
+      },
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr",
+              "repr": "8"
+            }
+          },
+          "groups": {}
+        }
+      }
+    }
+  }
+}

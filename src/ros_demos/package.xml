@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/ros-infrastructure/rep/master/xsd/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>ros_demos</name>
+  <version>1.0.0</version>
+  <description>SLAMcore - Integration with the Navigation Stack</description>
+  <maintainer email="nikos@slamcore.com">Nikos Koukis</maintainer>
+  <author email="nikos@slamcore.com">Nikos Koukis</author>
+  <license>SLAMcore Confidential</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <exec_depend>diagnostic_aggregator</exec_depend>
+  <exec_depend>follow_waypoints</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>kobuki_keyop</exec_depend>
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rosserial_python</exec_depend>
+  <exec_depend>rqt_gui</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>slamcore_slam</exec_depend>
+  <exec_depend>slamcore_viz</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+</package>

@@ -1,0 +1,9 @@
+repositories:
+  follow_waypoints:
+    type: git
+    version: master
+    url: git@bitbucket.org:slamcore/follow_waypoints
+  kobuki:
+    type: git
+    version: melodic
+    url: https://github.com/yujinrobot/kobuki
