@@ -47,7 +47,9 @@ run: build setup_host
 	if [[ $$ret1 == 0 && $$ret2 != 125 ]]; then \
 		docker_cmd="docker run --rm --gpus all"; \
 	fi; \
-	$$docker_cmd --volume "${THIS_DIR}":"/home/${DOCKER_USER}/ros_ws/" \
+	$$docker_cmd \
+		--rm \
+		--volume "${THIS_DIR}":"/home/${DOCKER_USER}/ros_ws/" \
 		--volume "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 		--volume /dev/:/dev/ \
 		--volume /var/run/dbus/:/var/run/dbus/ \

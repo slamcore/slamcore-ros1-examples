@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gist.githubusercontent.com/nalt/dfa2abc9d2e3ae4feb82ca5608090387/raw/roslaunch.xsd">
+  <arg name="kinematics" default="true" />
+  <arg name="input_device" default="/dev/input/js0" />
+  <arg name="scale_linear" default="1.0" />
+  <arg name="scale_angular" default="1.0" />
+
+
+  <group if="$(arg kinematics)">
+    <include file="$(dirname)/kobuki/setup_live.launch" />
+  </group>
+
+  <node pkg="ros1_examples" type="kobuki_joystick" name="kobuki_joystick" output="screen" required="true">
+    <remap from="kobuki_joystick/motor_power" to="mobile_base/commands/motor_power" />
+    <remap from="kobuki_joystick/cmd_vel" to="mobile_base/commands/velocity" />
+
+    <param name="input_device" value="$(arg input_device)" type="string" />
+    <param name="scale_linear" value="$(arg scale_linear)" type="double" />
+    <param name="scale_angular" value="$(arg scale_angular)" type="double" />
+  </node>
+</launch>

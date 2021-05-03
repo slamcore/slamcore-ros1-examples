@@ -221,5 +221,11 @@ CATKIN_IGNORE
 # End of https://www.toptal.com/developers/gitignore/api/python,ros,docker,im,vscode,cpp
 
 src/follow_waypoints
+src/kobuki_joystick_ros
 src/kobuki
 debs/*
+.catkin_workspace
+.stamps/
+Session.vim
+/kobuki_config.sh
+/output/

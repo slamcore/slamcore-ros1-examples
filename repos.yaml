@@ -2,7 +2,7 @@ repositories:
   follow_waypoints:
     type: git
     version: master
-    url: git@bitbucket.org:slamcore/follow_waypoints
+    url: https://github.com/slamcore/follow_waypoints
   kobuki:
     type: git
     version: melodic

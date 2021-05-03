@@ -20,19 +20,7 @@
   <arg name="camera_link_frame_xyz" default="$(env CAMERA_LINK_FRAME_XYZ)" doc="Space-separated XYZ pose of the Camera frame with regards to the base"/>
   <arg name="camera_link_frame_rpy" default="$(optenv CAMERA_LINK_FRAME_RPY 0 0 0)" doc="Space-eparated RPY Rotation of the Camera frame with regards to the base"/>
 
-  <!-- Set one of these 2 exclusively.
-
-    If you set the session file then the map will be extracted from that session
-    file and it will be used for navigation as well. If you want to run SLAM
-    only (i.e., no multisession, thus no loaded session), then you have to manually
-    specify the map filepath via the map_for_navigation argument
-  -->
   <arg name="session_file" default="$(optenv SESSION_FILE)" doc="Session file, set it to empty if you want to run in classic SLAM"/>
-  <arg name="map_for_navigation" default="$(optenv MAP_FOR_NAVIGATION)" doc="Path to the map to use for navigation - Don't use if you've set the session_file"/>
-
-  <!-- map_for_navigation XOR session_file -->
-  <arg if="$(eval (map_for_navigation != '') == (session_file != ''))" name="Please_Set_Exclusively_Either_Map_For_Navigation_Or_Session_File"/>
-  <arg if="$(eval (map_for_navigation != '') == (session_file != ''))" name="dummy" value="$(arg Please_Set_Exclusively_Either_Map_For_Navigation_Or_Session_File)"/>
 
   <!-- Optional arguments -->
   <arg name="waypoint_nav" default="$(optenv WAYPOINT_NAV true)" doc="Enable waypoint navigation (bool)"/>
@@ -47,16 +35,16 @@
 
   <arg name="use_sim_time" value="false"/>
   <arg name="robot_type" value="kobuki"/>
-  <arg name="robot_urdf" value="$(find ros_demos)/descriptions/slamcore-$(arg robot_type).urdf.xacro" doc="Path to the Robot URDF file"/>
+  <arg name="robot_urdf" value="$(find ros1_examples)/descriptions/slamcore-$(arg robot_type).urdf.xacro" doc="Path to the Robot URDF file"/>
   <arg name="waypoint_nav_topic" value="/initialpose" doc="Topic at which the waypoints are provided"/>
   <arg name="waypoint_nav_use_poses" value="true" doc="Whether we provide 2D Poses or 2D Points for waypoint navigation (bool)"/>
   <arg name="map_frame" value="map"/>
   <arg name="odom_frame" value="odom"/>
-  <arg name="map_topic" value="$(eval '/map' if arg('map_for_navigation') != '' else '/slamcore/map')"/>
+  <arg name="map_topic" value="/slamcore/map"/>
   <arg name="odom_topic" value="/odom"/>
   <arg name="cmd_vel_topic" value="/mobile_base/commands/velocity"/>
   <arg name="camera_tf_root" value="realsense"/>
-  <arg name="obstacle_avoidance_params" value="$(find ros_demos)/config/common/obstacle_avoidance_pointcloud.yaml"/>
+  <arg name="obstacle_avoidance_params" value="$(find ros1_examples)/config/common/obstacle_avoidance_pointcloud.yaml"/>
 
   <!--
     Nodes
@@ -80,12 +68,8 @@
     <arg name="odom_frame" value="odom"/>
     <arg name="base_frame" value="slamcore/base_link"/>
     <arg name="generate_map2d" value="true"/>
+    <arg if="$(eval optenv('ODOM_READING_TOPIC') != '')" name="odom_reading_topic" value="$(env ODOM_READING_TOPIC)"/>
   </include>
-
-  <!-- Map in case of pure SLAM (no loaded session) -->
-  <group if="$(eval arg('map_for_navigation') != '')">
-    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_for_navigation)" required="true"/>
-  </group>
 
   <!-- move_base -->
   <include file="$(dirname)/common/setup_move_base.launch" pass_all_args="true"/>
@@ -99,7 +83,7 @@
         required="true"/>
 
   <!-- Stop all motion on exit -->
-  <node name="stop_motion" pkg="ros_demos" type="stop_motion.sh" args="$(arg cmd_vel_topic)"
+  <node name="stop_motion" pkg="ros1_examples" type="stop_motion.sh" args="$(arg cmd_vel_topic)"
     output="$(arg output)"
     required="true"/>
 

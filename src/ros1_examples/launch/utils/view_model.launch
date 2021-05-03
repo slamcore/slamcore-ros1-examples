@@ -22,5 +22,5 @@
     <param name="use_gui" value="$(arg joint_pub_gui)"/>
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_demos)/rviz/model.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros1_examples)/rviz/model.rviz"/>
 </launch>

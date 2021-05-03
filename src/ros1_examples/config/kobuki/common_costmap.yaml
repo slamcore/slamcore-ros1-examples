@@ -1,6 +1,7 @@
 obstacle_range: 3.0
 raytrace_range: 3.5
 
+inflation_radius: 1.0
 robot_radius: 0.18
 footprint_padding: 0.0
 

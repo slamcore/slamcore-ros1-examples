@@ -1,0 +1,46 @@
+{
+  "Version": "1.0.0",
+  "Base": {
+    "ProfileName": "jetson_xavier_nx",
+    "KinematicsEnabled": true,
+    "Synchroniser": {
+      "KinematicsPoseCameraOffset": "42.0ms"
+    }
+  },
+  "Position": {
+    "Estimator":
+    {
+      "TimeBudget": "10ms"
+    },
+    "Backend": {
+      "Type": "VisualInertialKinematic"
+    },
+    "Frontend":
+    {
+      "NumKeypoints": 100
+    },
+    "Odometry": {
+      "EstimationScaleY": false,
+      "ScaleTheta": 0.9364361585576231,
+      "ScaleX": 1.0009030227774691,
+      "ScaleY": 1.0,
+      "SigmaCauchyKernel": 0.0445684,
+      "SigmaTheta": 1.94824,
+      "SigmaX": 0.0212807,
+      "SigmaY": 0.00238471,
+      "T_SO": {
+        "R": [
+          0.5062407414595297,
+          0.49242403927156886,
+          -0.4916330719846658,
+          0.50944656222699
+        ],
+        "T": [
+          0.0254389,
+          -0.00284919,
+          -0.09338891
+        ]
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
   <xacro:arg name="camera_link_frame_rpy" default=""/>
 
   <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
-  <xacro:include filename="$(find ros_demos)/descriptions/_d435.urdf.xacro" />
+  <xacro:include filename="$(find ros1_examples)/descriptions/_d435.urdf.xacro" />
 
   <xacro:kobuki/>
   <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="base_link">
