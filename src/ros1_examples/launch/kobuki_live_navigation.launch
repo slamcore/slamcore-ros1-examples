@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<launch>
+<launch xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://gist.githubusercontent.com/nalt/dfa2abc9d2e3ae4feb82ca5608090387/raw/roslaunch.xsd">
   <!--
     Autonomous navigation using the kobuki platform in a live setup.
     Uses the following components
@@ -18,7 +18,7 @@
 
   <!-- Base -> Realsense Camera Transformation -->
   <arg name="camera_link_frame_xyz" default="$(env CAMERA_LINK_FRAME_XYZ)" doc="Space-separated XYZ pose of the Camera frame with regards to the base"/>
-  <arg name="camera_link_frame_rpy" default="$(optenv CAMERA_LINK_FRAME_RPY 0 0 0)" doc="Space-eparated RPY Rotation of the Camera frame with regards to the base"/>
+  <arg name="camera_link_frame_rpy" default="$(optenv CAMERA_LINK_FRAME_RPY 0 0 0)" doc="Space-separated RPY Rotation of the Camera frame with regards to the base"/>
 
   <arg name="session_file" default="$(optenv SESSION_FILE)" doc="Session file, set it to empty if you want to run in classic SLAM"/>
 
@@ -45,6 +45,8 @@
   <arg name="cmd_vel_topic" value="/mobile_base/commands/velocity"/>
   <arg name="camera_tf_root" value="realsense"/>
   <arg name="obstacle_avoidance_params" value="$(find ros1_examples)/config/common/obstacle_avoidance_pointcloud.yaml"/>
+  <arg name="slamcore_base_frame" value="slamcore/base_link"/>
+  <arg name="robot_base_frame" value="base_footprint"/>
 
   <!--
     Nodes
@@ -55,7 +57,7 @@
 
   <!-- Load robot model -->
   <group if="$(eval robot_urdf != '')">
-    <arg name="urdf_command" value="$(find xacro)/xacro $(arg robot_urdf) camera_tf_root:=$(arg camera_tf_root) camera_link_frame_xyz:='$(arg camera_link_frame_xyz)' camera_link_frame_rpy:='$(arg camera_link_frame_rpy)'"/>
+    <arg name="urdf_command" value="$(find xacro)/xacro $(arg robot_urdf) camera_tf_root:=$(arg camera_tf_root) camera_link_frame_xyz:='$(arg camera_link_frame_xyz)' camera_link_frame_rpy:='$(arg camera_link_frame_rpy)' parent_frame:='$(arg robot_base_frame)'"/>
     <param name="robot_description" command="$(arg urdf_command)"/>
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="$(arg output)">
       <param name="publish_frequency" type="double" value="30.0"/>
@@ -64,9 +66,9 @@
 
   <!-- SLAMcore -->
   <include file="$(find slamcore_slam)/launch/run_slam.launch" pass_all_args="true">
+    <arg name="base_frame" value="$(arg slamcore_base_frame)"/>
     <arg name="map_frame" value="map"/>
     <arg name="odom_frame" value="odom"/>
-    <arg name="base_frame" value="slamcore/base_link"/>
     <arg name="generate_map2d" value="true"/>
     <arg if="$(eval optenv('ODOM_READING_TOPIC') != '')" name="odom_reading_topic" value="$(env ODOM_READING_TOPIC)"/>
   </include>
@@ -78,14 +80,18 @@
   <include file="$(dirname)/common/setup_realsense_obstacle_avoidance.launch" pass_all_args="true"/>
 
   <!-- Transform: SLAMcore Estimation Frame <-> Realsense Model Frame -->
-  <node pkg="tf2_ros" type="static_transform_publisher" name="pose_estimation_frame_pub"
-        args='0.017 0.249 -0.124 0.503 -0.498 0.497 0.502 "slamcore/base_link" "base_footprint"'
-        required="true"/>
+  <node name="slamcore_pose_estimation_frame_pub" pkg="ros1_examples" type="pose_estimation_frame_pub.py"
+        output="$(arg output)"
+        required="true">
+    <param name="parent_frame" value="$(arg slamcore_base_frame)"/>
+    <param name="child_frame" value="$(arg robot_base_frame)"/>
+  </node>
+
 
   <!-- Stop all motion on exit -->
   <node name="stop_motion" pkg="ros1_examples" type="stop_motion.sh" args="$(arg cmd_vel_topic)"
-    output="$(arg output)"
-    required="true"/>
+        output="$(arg output)"
+        required="true"/>
 
   <!-- Enable waypoint navigation -->
   <group if="$(arg waypoint_nav)">

@@ -7,14 +7,14 @@ unset SESSION_FILE
 unset CONFIG_FILE
 unset ODOM_READING_TOPIC
 
-# XYZ Transformation of your Realsense with respect to the base of the robot
+# Transformation of your camera with respect to the base of the robot
 # Use the ros1_examples/view_model.launch file to find compute and/or verify an
-# estimate of this transform
+# estimate of this transform.
 # Following is a rough transformation of the Realsense camera when you're using
 # the in-house mounting plates.
-export CAMERA_LINK_FRAME_XYZ="0.120 0.0 0.240"
+export CAMERA_LINK_FRAME_XYZ="0.09338891 -0.00284919 0.0254389"
 # Edit this accordingly after calibration
-export CAMERA_LINK_FRAME_RPY="0.0 0.0 0.0"
+export CAMERA_LINK_FRAME_RPY="0 0 0"
 
 # export SESSION_FILE=TODO_PATH_TO_SESSION_FILE
 # export CONFIG_FILE=TODO_ADD_PATH_TO_CONFIG_FILE
