@@ -80,16 +80,8 @@
   <include file="$(dirname)/common/setup_realsense_obstacle_avoidance.launch" pass_all_args="true"/>
 
   <!-- Transform: SLAMcore Estimation Frame <-> Realsense Model Frame -->
-  <node name="slamcore_pose_estimation_frame_pub" pkg="ros1_examples" type="pose_estimation_frame_pub.py"
-        output="$(arg output)"
-        required="true">
-    <param name="parent_frame" value="$(arg slamcore_base_frame)"/>
-    <param name="child_frame" value="$(arg robot_base_frame)"/>
-  </node>
-
-  <!-- Stop all motion on exit -->
-  <node name="stop_motion" pkg="ros1_examples" type="stop_motion.sh" args="$(arg cmd_vel_topic)"
-        output="$(arg output)"
+  <node pkg="tf2_ros" type="static_transform_publisher" name="slamcore_pose_estimation_frame_pub"
+        args='$(arg camera_link_frame_xyz) $(arg camera_link_frame_rpy) "$(arg slamcore_base_frame)" "$(arg robot_base_frame)"'
         required="true"/>
 
   <!-- Enable waypoint navigation -->

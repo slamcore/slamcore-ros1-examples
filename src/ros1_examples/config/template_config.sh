@@ -7,14 +7,22 @@ unset SESSION_FILE
 unset CONFIG_FILE
 unset ODOM_READING_TOPIC
 
-# Transformation of your camera with respect to the base of the robot
-# Use the ros1_examples/view_model.launch file to find compute and/or verify an
+# Transformation: Robot base_footprint frame with regards to the SLAMcore frame
+# of reference. Currently the SLAMcore frame has the following configuration
+# (assumming the camera is mounted looking forwards and parallel to the robot
+# base):
+#
+# Z forwards
+# X left
+# Y down
+#
+# Use the ros1_examples/view_model.launch file to compute and/or verify an
 # estimate of this transform.
 # Following is a rough transformation of the Realsense camera when you're using
 # the in-house mounting plates and 3D printed camera mount.
 # Edit this accordingly after calibration
-export CAMERA_LINK_FRAME_XYZ="0.09338891 -0.00284919 0.0254389"
-export CAMERA_LINK_FRAME_RPY="0 0 0"
+export CAMERA_LINK_FRAME_XYZ="-0.00284919 0.254 -0.09338891"
+export CAMERA_LINK_FRAME_RPY="0 -1.571 1.571"
 
 # export SESSION_FILE=TODO_PATH_TO_SESSION_FILE
 # export CONFIG_FILE=TODO_ADD_PATH_TO_CONFIG_FILE
