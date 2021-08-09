@@ -21,8 +21,8 @@ unset ODOM_READING_TOPIC
 # Following is a rough transformation of the Realsense camera when you're using
 # the in-house mounting plates and 3D printed camera mount.
 # Edit this accordingly after calibration
-export CAMERA_LINK_FRAME_XYZ="-0.00284919 0.254 -0.09338891"
-export CAMERA_LINK_FRAME_RPY="0 -1.571 1.571"
+export CAMERA_LINK_FRAME_XYZ="-0.0028 0.2310 -0.0934"
+export CAMERA_LINK_FRAME_RPY="0.000 -1.571 1.571"
 
 # export SESSION_FILE=TODO_PATH_TO_SESSION_FILE
 # export CONFIG_FILE=TODO_ADD_PATH_TO_CONFIG_FILE

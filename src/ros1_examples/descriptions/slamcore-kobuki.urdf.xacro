@@ -6,16 +6,14 @@
        xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:arg name="camera_tf_root" default=""/>
-  <xacro:arg name="parent_frame" default="base_footprint"/>
 
   <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
   <xacro:include filename="$(find ros1_examples)/descriptions/_d435.urdf.xacro" />
   <xacro:include filename="$(find ros1_examples)/descriptions/plates.urdf.xacro" />
 
   <xacro:kobuki/>
-  <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="$(arg parent_frame)">
-    <origin xyz="0.09338891 0.0 0.25" rpy="0 0 0"/>
+  <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="camera_mount_link">
+    <origin xyz="0.000 0.000 0.014" rpy="0.000 0.000 0.000"/>
   </xacro:sensor_d435>
   <xacro:stack_mdf parent="base_link"/>
-
 </robot>

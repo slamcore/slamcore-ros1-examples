@@ -57,7 +57,7 @@
 
   <!-- Load robot model -->
   <group if="$(eval robot_urdf != '')">
-    <arg name="urdf_command" value="$(find xacro)/xacro $(arg robot_urdf) camera_tf_root:=$(arg camera_tf_root) camera_link_frame_xyz:='$(arg camera_link_frame_xyz)' camera_link_frame_rpy:='$(arg camera_link_frame_rpy)' parent_frame:='$(arg robot_base_frame)'"/>
+    <arg name="urdf_command" value="$(find xacro)/xacro $(arg robot_urdf) camera_tf_root:=$(arg camera_tf_root) camera_link_frame_xyz:='$(arg camera_link_frame_xyz)' camera_link_frame_rpy:='$(arg camera_link_frame_rpy)'"/>
     <param name="robot_description" command="$(arg urdf_command)"/>
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="$(arg output)">
       <param name="publish_frequency" type="double" value="30.0"/>
