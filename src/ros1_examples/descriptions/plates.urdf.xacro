@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<!--
+  Slamcore Plate Stack, Standoffs and Camera Mount
+ -->
+<robot name="stack_mdf" xmlns:xacro="http://ros.org/wiki/xacro">
+ 
+  <!-- Xacro properties -->
+  <xacro:property name="M_SCALE" value="0.001"/> <!-- To apply to STLs that need downsizing -->
+
+  <!-- Xacro materials -->
+  <material name="ss">
+	  <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+  <material name="mdf">
+	  <color rgba="0.58 0.43 0.2 1"/>
+  </material>
+
+  <material name="pla">
+	  <color rgba="0 0 0 1"/>
+  </material>
+
+  <!-- Xacro macros -->
+  <!-- Standoff macros -->
+  <xacro:macro name="stack_bottom_standoff" params="parent number x_loc y_loc z_loc roll=0.0 pitch=0.0 yaw=0.0">
+    <joint name="standoff_bottom_${number}_joint" type="fixed">
+      <origin xyz="${x_loc} ${y_loc} ${z_loc}" rpy="${roll} ${pitch} ${yaw}"/>
+      <parent link="${parent}"/>
+      <child link="standoff_bottom_${number}_link"/>
+    </joint>
+    <link name="standoff_bottom_${number}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/L10_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Small standoff STL -->
+        </geometry>
+        <material name="ss"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.01" radius="0.006"/> <!-- Approx dimensions of standoff-->
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+  
+  <xacro:macro name="stack_middle_standoff" params="parent number x_loc y_loc z_loc roll=0.0 pitch=0.0 yaw=0.0">
+    <joint name="standoff_middle_${number}_joint" type="fixed">
+      <origin xyz="${x_loc} ${y_loc} ${z_loc}" rpy="${roll} ${pitch} ${yaw}" />
+      <parent link="${parent}"/>
+      <child link="standoff_middle_${number}_link"/>
+    </joint>
+    <link name="standoff_middle_${number}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle standoff STL -->
+        </geometry>
+        <material name="ss"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.05" radius="0.006"/> <!-- Approx dimensions of standoff-->
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="stack_top_standoff" params="parent number x_loc y_loc z_loc roll=0.0 pitch=0.0 yaw=0.0">
+    <joint name="standoff_top_${number}_joint" type="fixed">
+      <origin xyz="${x_loc} ${y_loc} ${z_loc}" rpy="${roll} ${pitch} ${yaw}"/>
+      <parent link="${parent}"/>
+      <child link="standoff_top_${number}_link"/>
+    </joint>
+    <link name="standoff_top_${number}_link">
+      <visual>
+        <origin xyz=" 0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top standoff STL -->
+        </geometry>
+        <material name="ss"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.05" radius="0.006"/> <!-- Approx dimensions of standoff-->
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+
+  <!-- 
+    Stack macro - all the components relative transforms are made with respect 
+    to the parent link (usually base_link). They could be made relative to each
+    other, but there is no necessary reason to do so.
+  -->
+  <xacro:macro name="stack_mdf" params="parent">
+    <xacro:stack_bottom_standoff parent="${parent}" number="0" x_loc= "0.120" y_loc= "0.082"  z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="1" x_loc= "0.077" y_loc= "0.1118" z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="2" x_loc= "0.007" y_loc= "0.1118" z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="3" x_loc="-0.055" y_loc= "0.120"  z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="4" x_loc= "0.120" y_loc="-0.082"  z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="5" x_loc= "0.077" y_loc="-0.1118" z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="6" x_loc= "0.007" y_loc="-0.1118" z_loc="0.089"/>
+    <xacro:stack_bottom_standoff parent="${parent}" number="7" x_loc="-0.055" y_loc="-0.120"  z_loc="0.089"/>
+
+    
+    <joint name="plate_bottom_joint" type="fixed">
+      <origin xyz="-0.065 0.0 0.099" rpy="0 0 0"/> <!-- Position to base link relative to centre back of plate -->
+      <parent link="${parent}"/>
+      <child link="plate_bottom_link"/>
+    </joint>  
+    <link name="plate_bottom_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/bottom_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Bottom Plate STL -->
+        </geometry>
+        <material name="mdf"/>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/bottom_plate.stl"
+                scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <xacro:stack_middle_standoff parent="${parent}" number="0" x_loc= "0.120" y_loc= "0.082"  z_loc="0.102"/>
+    <xacro:stack_middle_standoff parent="${parent}" number="1" x_loc= "0.077" y_loc= "0.1118" z_loc="0.102"/>
+    <xacro:stack_middle_standoff parent="${parent}" number="2" x_loc= "0.007" y_loc= "0.1118" z_loc="0.102"/>
+    <xacro:stack_middle_standoff parent="${parent}" number="3" x_loc= "0.120" y_loc="-0.082"  z_loc="0.102"/>
+    <xacro:stack_middle_standoff parent="${parent}" number="4" x_loc= "0.077" y_loc="-0.1118" z_loc="0.102"/>
+    <xacro:stack_middle_standoff parent="${parent}" number="5" x_loc= "0.007" y_loc="-0.1118" z_loc="0.102"/>
+    
+    <joint name="plate_middle_joint" type="fixed">
+      <origin xyz="-0.0105 0.0 0.152" rpy="0 0 0"/> <!-- Position to base link relative to centre back of plate -->
+      <parent link="${parent}"/>
+      <child link="plate_middle_link"/>
+    </joint>  
+    <link name="plate_middle_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/middle_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle Plate STL -->
+        </geometry>
+        <material name="mdf"/>
+      </visual>  
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/middle_plate.stl"
+                scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <xacro:stack_top_standoff parent="${parent}" number="0" x_loc= "0.120" y_loc= "0.082"  z_loc="0.155"/>
+    <xacro:stack_top_standoff parent="${parent}" number="1" x_loc= "0.077" y_loc= "0.1118" z_loc="0.155"/>
+    <xacro:stack_top_standoff parent="${parent}" number="2" x_loc= "0.120" y_loc="-0.082"  z_loc="0.155"/>
+    <xacro:stack_top_standoff parent="${parent}" number="3" x_loc= "0.077" y_loc="-0.1118" z_loc="0.155"/>
+    
+    <joint name="plate_top_joint" type="fixed">
+      <origin xyz="0.0656 0.0  0.205" rpy="0 0 0"/> <!-- Position to base link relative to centre back of plate -->
+      <parent link="${parent}"/>
+      <child link="plate_top_link"/>
+    </joint>  
+    <link name="plate_top_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top Plate STL -->
+        </geometry>
+        <material name="mdf"/>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="camera_mount_joint" type="fixed">
+      <origin xyz="0.0981 0.0  0.208" rpy="0 0 0"/> <!-- Position to base link relative to bottom of mount tripod screw hole -->
+      <parent link="${parent}"/>
+      <child link="camera_mount_link"/>
+    </joint>  
+    <link name="camera_mount_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Camera mount STL -->
+        </geometry>
+        <material name="pla"/>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+</robot>

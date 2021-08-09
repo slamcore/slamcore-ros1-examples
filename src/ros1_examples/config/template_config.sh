@@ -11,9 +11,9 @@ unset ODOM_READING_TOPIC
 # Use the ros1_examples/view_model.launch file to find compute and/or verify an
 # estimate of this transform.
 # Following is a rough transformation of the Realsense camera when you're using
-# the in-house mounting plates.
-export CAMERA_LINK_FRAME_XYZ="0.09338891 -0.00284919 0.0254389"
+# the in-house mounting plates and 3D printed camera mount.
 # Edit this accordingly after calibration
+export CAMERA_LINK_FRAME_XYZ="0.09338891 -0.00284919 0.0254389"
 export CAMERA_LINK_FRAME_RPY="0 0 0"
 
 # export SESSION_FILE=TODO_PATH_TO_SESSION_FILE

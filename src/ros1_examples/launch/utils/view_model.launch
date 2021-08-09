@@ -4,11 +4,11 @@
   Useful for debugging or just viewing a model of your choice
  -->
 <launch>
-  <arg name="urdf_file"/>
+  <arg name="urdf_file" default="$(find ros1_examples)/descriptions/slamcore-kobuki.urdf.xacro"/>
   <arg name="joint_pub_gui" default="false"/>
 
   <arg name="camera_link_frame_xyz" default="$(env CAMERA_LINK_FRAME_XYZ)" doc="Space-separated XYZ pose of the Camera frame with regards to the base"/>
-  <arg name="camera_link_frame_rpy" default="$(optenv CAMERA_LINK_FRAME_RPY 0 0 0)" doc="Space-eparated RPY Rotation of the Camera frame with regards to the base"/>
+  <arg name="camera_link_frame_rpy" default="$(optenv CAMERA_LINK_FRAME_RPY 0 0 0)" doc="Space-separated RPY Rotation of the Camera frame with regards to the base"/>
   <arg name="camera_tf_root" value="realsense"/>
 
   <arg name="urdf_command" value="$(find xacro)/xacro $(arg urdf_file) camera_tf_root:=$(arg camera_tf_root) camera_link_frame_xyz:='$(arg camera_link_frame_xyz)' camera_link_frame_rpy:='$(arg camera_link_frame_rpy)'"/>

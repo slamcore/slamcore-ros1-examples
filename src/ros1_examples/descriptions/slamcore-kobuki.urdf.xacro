@@ -12,9 +12,12 @@
 
   <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
   <xacro:include filename="$(find ros1_examples)/descriptions/_d435.urdf.xacro" />
+  <xacro:include filename="$(find ros1_examples)/descriptions/plates.urdf.xacro" />
 
   <xacro:kobuki/>
   <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="$(arg parent_frame)">
     <origin xyz="$(arg camera_link_frame_xyz)" rpy="$(arg camera_link_frame_rpy)"/>
   </xacro:sensor_d435>
+  <xacro:stack_mdf parent="base_link"/>
+
 </robot>

@@ -87,7 +87,6 @@
     <param name="child_frame" value="$(arg robot_base_frame)"/>
   </node>
 
-
   <!-- Stop all motion on exit -->
   <node name="stop_motion" pkg="ros1_examples" type="stop_motion.sh" args="$(arg cmd_vel_topic)"
         output="$(arg output)"
