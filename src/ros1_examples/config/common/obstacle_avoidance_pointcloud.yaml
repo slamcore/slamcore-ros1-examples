@@ -1,10 +1,6 @@
-# TODO change the topic?
 obstacle_layer:
-  observation_sources: point_cloud_slice
-  point_cloud_slice: {sensor_frame: slamcore/base_link,
-                      data_type: LaserScan,
-                      topic: /point_cloud_slice,
-                      marking: true,
-                      clearing: true}
-#   observation_sources: point_cloud
-#   point_cloud: {sensor_frame: slamcore/base_link, data_type: PointCloud2, topic: /point_cloud, marking: true, clearing: true}
+  observation_sources: pointcloud
+  pointcloud: {data_type: PointCloud2,
+               topic: /slamcore/local_point_cloud,
+               marking: true,
+               clearing: true}

@@ -8,15 +8,13 @@
     }
   },
   "Position": {
-    "Estimator":
-    {
+    "Estimator": {
       "TimeBudget": "10ms"
     },
     "Backend": {
       "Type": "VisualInertialKinematic"
     },
-    "Frontend":
-    {
+    "Frontend": {
       "NumKeypoints": 100
     },
     "Odometry": {
@@ -30,16 +28,22 @@
       "SigmaY": 0.00238471,
       "T_SO": {
         "R": [
-          0.5062407414595297,
-          0.49242403927156886,
-          -0.4916330719846658,
+          0.5062407414595297, 0.49242403927156886, -0.4916330719846658,
           0.50944656222699
         ],
-        "T": [
-          0.0254389,
-          -0.00284919,
-          -0.09338891
-        ]
+        "T": [0.0254389, -0.00284919, -0.09338891]
+      }
+    }
+  },
+  "UnstructuredPointCloud": {
+    "ExcludeVolume": {
+      "Anchored": {
+        "Min": {
+          "Z": [-1e30]
+        },
+        "Max": {
+          "Z": [-0.22]
+        }
       }
     }
   }

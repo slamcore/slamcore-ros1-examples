@@ -76,9 +76,6 @@
   <!-- move_base -->
   <include file="$(dirname)/common/setup_move_base.launch" pass_all_args="true"/>
 
-  <!-- Realsense obstacle avoidance -->
-  <include file="$(dirname)/common/setup_realsense_obstacle_avoidance.launch" pass_all_args="true"/>
-
   <!-- Transform: SLAMcore Estimation Frame <-> Realsense Model Frame -->
   <node pkg="tf2_ros" type="static_transform_publisher" name="slamcore_pose_estimation_frame_pub"
         args='$(arg camera_link_frame_xyz) $(arg camera_link_frame_rpy) "$(arg slamcore_base_frame)" "$(arg robot_base_frame)"'
