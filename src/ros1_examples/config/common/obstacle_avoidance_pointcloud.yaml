@@ -3,4 +3,5 @@ obstacle_layer:
   pointcloud: {data_type: PointCloud2,
                topic: /slamcore/local_point_cloud,
                marking: true,
-               clearing: true}
+               clearing: true,
+               min_obstacle_height: -0.22}

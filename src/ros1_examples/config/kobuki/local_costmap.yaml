@@ -8,8 +8,13 @@ local_costmap:
 
   cost_scaling_factor: 3.0
 
-  static_map: false
   rolling_window: true
   width: 3
   height: 3
   resolution: 0.05
+
+  plugins:
+  - {name: obstacle_layer,   type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation_layer,  type: "costmap_2d::InflationLayer"}
+
+  # see obstacle_avoidance_* files for obstacle_layer details

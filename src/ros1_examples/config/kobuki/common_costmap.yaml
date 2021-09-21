@@ -6,5 +6,4 @@ robot_radius: 0.18
 footprint_padding: 0.0
 
 # see obstacle_avoidance_* files
-map_type: costmap
 track_unknown_space: true
