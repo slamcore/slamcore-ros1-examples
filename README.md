@@ -1,11 +1,11 @@
-[![](./images/slamcore-logo.jpg)](https://www.slamcore.com/)
-
 # SLAMcore ROS Melodic Demos and Tutorials
 
 This repository contains packages to go alongside our dedicated demonstration tutorials which will allow you to get SLAMcore
 up and running with ROS Melodic in no time. The current example demonstrates how to integrate [SLAMcore](https://www.slamcore.com/) with the [ROS Navigation Stack](http://wiki.ros.org/move_base) and was designed for a [Kobuki](http://kobuki.yujinrobot.com/about2/) mobile base, with a [Jetson Xavier NX](https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-xavier-nx/) and [RealSense D435i](https://www.intelrealsense.com/depth-camera-d435i/) depth camera. Nevertheless, by following our [Navigation Stack Integration Tutorial](https://docs.slamcore.com/navstack-integration.html) you will be able to modify the launch and config files in this repo to suit your setup.
 
-[Navigation Demo Video](https://www.youtube.com/watch?v=TMkKkJk6538)
+## Demo Video
+
+[![](http://img.youtube.com/vi/TMkKkJk6538/maxresdefault.jpg)](https://www.youtube.com/watch?v=TMkKkJk6538)
 
 ## About SLAMcore
 
