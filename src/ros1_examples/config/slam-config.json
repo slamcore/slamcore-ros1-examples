@@ -35,7 +35,7 @@
       }
     }
   },
-  "UnstructuredPointCloud": {
+  "LocalPointCloud": {
     "ExcludeVolume": {
       "Anchored": {
         "Min": {
