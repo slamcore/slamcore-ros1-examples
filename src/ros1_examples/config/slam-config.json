@@ -36,15 +36,6 @@
     }
   },
   "LocalPointCloud": {
-    "ExcludeVolume": {
-      "Anchored": {
-        "Min": {
-          "Z": [-1e30]
-        },
-        "Max": {
-          "Z": [-0.22]
-        }
-      }
-    }
+    "LowerBound": -0.22
   }
 }
