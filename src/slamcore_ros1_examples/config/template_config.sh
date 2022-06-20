@@ -16,7 +16,7 @@ unset ODOM_READING_TOPIC
 # X left
 # Y down
 #
-# Use the ros1_examples/view_model.launch file to compute and/or verify an
+# Use the slamcore_ros1_examples/view_model.launch file to compute and/or verify an
 # estimate of this transform.
 # Following is a rough transformation of the Realsense camera when you're using
 # the in-house mounting plates and 3D printed camera mount.

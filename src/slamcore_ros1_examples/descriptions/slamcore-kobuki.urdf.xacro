@@ -8,8 +8,8 @@
   <xacro:arg name="camera_tf_root" default=""/>
 
   <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
-  <xacro:include filename="$(find ros1_examples)/descriptions/_d435.urdf.xacro" />
-  <xacro:include filename="$(find ros1_examples)/descriptions/plates.urdf.xacro" />
+  <xacro:include filename="$(find slamcore_ros1_examples)/descriptions/_d435.urdf.xacro" />
+  <xacro:include filename="$(find slamcore_ros1_examples)/descriptions/plates.urdf.xacro" />
 
   <xacro:kobuki/>
   <xacro:sensor_d435 name="$(arg camera_tf_root)" parent="camera_mount_link">

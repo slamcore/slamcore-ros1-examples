@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- Constants -->
-  <arg name="empty_file" value="$(find ros1_examples)/config/common/empty.yaml"/>
+  <arg name="empty_file" value="$(find slamcore_slamcore_ros1_examples)/config/common/empty.yaml"/>
 
   <!-- Mandatory Arguments -->
   <arg name="map_topic" />
@@ -16,16 +16,16 @@
 
     For the robot at hand, move_base will load the configuration of each component
     (e.g., global planner) from
-    $(find ros1_examples)/config/$(arg robot_type)/<component-yaml-file>
+    $(find slamcore_ros1_examples)/config/$(arg robot_type)/<component-yaml-file>
   -->
-  <arg name="move_base_params" default="$(find ros1_examples)/config/common/move_base.yaml"/>
+  <arg name="move_base_params" default="$(find slamcore_ros1_examples)/config/common/move_base.yaml"/>
   <arg name="global_planner" default="global_planner/GlobalPlanner"/>
   <arg name="local_planner" default="teb_local_planner/TebLocalPlannerROS"/>
-  <arg name="global_planner_params" default="$(find ros1_examples)/config/$(arg robot_type)/global_planner.yaml"/>
-  <arg name="local_planner_params" default="$(find ros1_examples)/config/$(arg robot_type)/local_planner.yaml"/>
-  <arg name="global_costmap_params" default="$(find ros1_examples)/config/$(arg robot_type)/global_costmap.yaml"/>
-  <arg name="local_costmap_params" default="$(find ros1_examples)/config/$(arg robot_type)/local_costmap.yaml"/>
-  <arg name="common_costmap_params" default="$(find ros1_examples)/config/$(arg robot_type)/common_costmap.yaml"/>
+  <arg name="global_planner_params" default="$(find slamcore_ros1_examples)/config/$(arg robot_type)/global_planner.yaml"/>
+  <arg name="local_planner_params" default="$(find slamcore_ros1_examples)/config/$(arg robot_type)/local_planner.yaml"/>
+  <arg name="global_costmap_params" default="$(find slamcore_ros1_examples)/config/$(arg robot_type)/global_costmap.yaml"/>
+  <arg name="local_costmap_params" default="$(find slamcore_ros1_examples)/config/$(arg robot_type)/local_costmap.yaml"/>
+  <arg name="common_costmap_params" default="$(find slamcore_ros1_examples)/config/$(arg robot_type)/common_costmap.yaml"/>
   <arg name="obstacle_avoidance_params" default="$(arg empty_file)"/>
 
   <!-- Launch move_base -->

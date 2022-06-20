@@ -21,8 +21,7 @@ to modify the launch and config files in this repo to suit your setup.
 
 [SLAMcore](https://www.slamcore.com/) offers commercial-grade visual-inertial
 simultaneous localisation and mapping (SLAM) software for real-time autonomous
-navigation on robots and drones. [Request
-access](https://www.slamcore.com/sdk-access) today to get started.
+navigation on robots and drones.
 
 ## Getting started
 
@@ -31,7 +30,7 @@ access](https://www.slamcore.com/sdk-access) today to get started.
 To run the demo in this repository, you will need:
 
 - Ubuntu 18.04
-- [SLAMcore ROS Wrapper](https://docs.slamcore.com/ros1-wrapper.html) - You will need to [request access](https://www.slamcore.com/sdk-access) to download.
+- [SLAMcore ROS Wrapper](https://docs.slamcore.com/ros1-wrapper.html)
 - [ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu)
 - Intel RealSense D435i or D455 Depth Camera (D455 on Jetson platforms
   requires a DKMS patch. See our
