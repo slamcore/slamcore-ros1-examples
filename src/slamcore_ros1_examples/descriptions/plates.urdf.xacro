@@ -32,7 +32,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/L10_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Small standoff STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/L10_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Small standoff STL -->
         </geometry>
         <material name="ss"/>
       </visual>
@@ -55,7 +55,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle standoff STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle standoff STL -->
         </geometry>
         <material name="ss"/>
       </visual>
@@ -78,7 +78,7 @@
       <visual>
         <origin xyz=" 0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top standoff STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/L50_standoff.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top standoff STL -->
         </geometry>
         <material name="ss"/>
       </visual>
@@ -117,14 +117,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/bottom_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Bottom Plate STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/bottom_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Bottom Plate STL -->
         </geometry>
         <material name="mdf"/>
       </visual>  
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/bottom_plate.stl"
+          <mesh filename="package://slamcore_ros1_examples/meshes/bottom_plate.stl"
                 scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
       </collision>
@@ -146,14 +146,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/middle_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle Plate STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/middle_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Middle Plate STL -->
         </geometry>
         <material name="mdf"/>
       </visual>  
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/middle_plate.stl"
+          <mesh filename="package://slamcore_ros1_examples/meshes/middle_plate.stl"
                 scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
       </collision>
@@ -173,14 +173,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top Plate STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Top Plate STL -->
         </geometry>
         <material name="mdf"/>
       </visual>  
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://slamcore_ros1_examples/meshes/top_plate.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
       </collision>
     </link>
@@ -194,14 +194,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Camera mount STL -->
+          <mesh filename="package://slamcore_ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/> <!-- Camera mount STL -->
         </geometry>
         <material name="pla"/>
       </visual>  
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://slamcore_ros1_examples/meshes/d435i_mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
       </collision>
     </link>

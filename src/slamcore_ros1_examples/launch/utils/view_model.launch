@@ -4,7 +4,7 @@
   Useful for debugging or just viewing a model of your choice
  -->
 <launch>
-  <arg name="urdf_file" default="$(find ros1_examples)/descriptions/slamcore-kobuki.urdf.xacro"/>
+  <arg name="urdf_file" default="$(find slamcore_ros1_examples)/descriptions/slamcore-kobuki.urdf.xacro"/>
   <arg name="joint_pub_gui" default="false"/>
 
   <arg name="urdf_command" value="$(find xacro)/xacro $(arg urdf_file)"/>

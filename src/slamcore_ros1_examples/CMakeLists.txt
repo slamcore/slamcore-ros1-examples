@@ -22,7 +22,7 @@
 # ============================================================================ #
 cmake_minimum_required(VERSION 3.5.1)
 project(
-  ros1_examples
+  slamcore_ros1_examples
   VERSION 0.2.0
   LANGUAGES C CXX)
 

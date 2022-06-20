@@ -35,7 +35,7 @@
 
   <arg name="use_sim_time" value="false"/>
   <arg name="robot_type" value="kobuki"/>
-  <arg name="robot_urdf" value="$(find ros1_examples)/descriptions/slamcore-$(arg robot_type).urdf.xacro" doc="Path to the Robot URDF file"/>
+  <arg name="robot_urdf" value="$(find slamcore_ros1_examples)/descriptions/slamcore-$(arg robot_type).urdf.xacro" doc="Path to the Robot URDF file"/>
   <arg name="waypoint_nav_topic" value="/initialpose" doc="Topic at which the waypoints are provided"/>
   <arg name="waypoint_nav_use_poses" value="true" doc="Whether we provide 2D Poses or 2D Points for waypoint navigation (bool)"/>
   <arg name="map_frame" value="map"/>
@@ -44,7 +44,7 @@
   <arg name="odom_topic" value="/odom"/>
   <arg name="cmd_vel_topic" value="/mobile_base/commands/velocity"/>
   <arg name="camera_tf_root" value="realsense"/>
-  <arg name="obstacle_avoidance_params" value="$(find ros1_examples)/config/common/obstacle_avoidance_pointcloud.yaml"/>
+  <arg name="obstacle_avoidance_params" value="$(find slamcore_ros1_examples)/config/common/obstacle_avoidance_pointcloud.yaml"/>
   <arg name="slamcore_base_frame" value="slamcore/base_link"/>
   <arg name="robot_base_frame" value="base_footprint"/>
 

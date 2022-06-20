@@ -10,7 +10,7 @@
     <include file="$(dirname)/kobuki/setup_live.launch" />
   </group>
 
-  <node pkg="ros1_examples" type="kobuki_joystick" name="kobuki_joystick" output="screen" required="true">
+  <node pkg="slamcore_ros1_examples" type="kobuki_joystick" name="kobuki_joystick" output="screen" required="true">
     <remap from="kobuki_joystick/motor_power" to="mobile_base/commands/motor_power" />
     <remap from="kobuki_joystick/cmd_vel" to="mobile_base/commands/velocity" />
 

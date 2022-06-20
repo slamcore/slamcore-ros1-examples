@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/ros-infrastructure/rep/master/xsd/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>ros1_examples</name>
+  <name>slamcore_ros1_examples</name>
   <version>1.0.0</version>
   <description>SLAMcore - Integration with the Navigation Stack</description>
   <maintainer email="nikos@slamcore.com">Nikos Koukis</maintainer>

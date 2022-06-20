@@ -8,9 +8,9 @@
 <!-- Arguments -->
 <arg name="output" default="screen" />
 <arg name="node_prefix" default="" />
-<arg name="rviz_file" default="$(find ros1_examples)/rviz/slamcore_nav.rviz" />
+<arg name="rviz_file" default="$(find slamcore_ros1_examples)/rviz/slamcore_nav.rviz" />
 <arg name="splash_screen" value="$(find slamcore_viz)/images/slamcore_logo_black_v2_300dpi.png" />
-<arg name="perspective_file" value="$(find ros1_examples)/rqt/slamcore_nav.perspective"/>
+<arg name="perspective_file" value="$(find slamcore_ros1_examples)/rqt/slamcore_nav.perspective"/>
 
 <!-- Nodes -->
 <node pkg="rviz" type="rviz" name="slam_visualiser"
